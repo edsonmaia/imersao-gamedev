@@ -1,6 +1,6 @@
 let imagemCenario;
-let imagemCenario1;
-let imagemCenario2;
+let imagemCenarioFundo;
+let imagemGameOver;
 
 let pontuacao;
 
@@ -120,11 +120,10 @@ const matrizInimigoVoador = [
 ];
 
 function preload() {
-  
-  //imagemCenario       = loadImage('imagens/cenario/floresta4.png');
-  imagemCenario       = loadImage('imagens/cenario/Sky.png');
-  imagemCenario1      = loadImage('imagens/cenario/BG_Decor.png');
-  imagemCenario2      = loadImage('imagens/cenario/Foreground.png');
+
+  //imagemCenarioFundo  = loadImage('imagens/cenario/Foreground.png');
+  imagemCenario       = loadImage('imagens/cenario/floresta4.png');
+  imagemGameOver      = loadImage('imagens/assets/game-over.png');
 
   imagemPersonagem    = loadImage('imagens/personagem/correndo.png');
   
@@ -139,22 +138,36 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
-  pontuacao = new Pontuacao();
+  pontuacao  = new Pontuacao();
   
-  personagem          = new Personagem(matrizPersonagem, imagemPersonagem, 0, 30, 110, 135, 220, 270);
+  personagem = new Personagem(matrizPersonagem, imagemPersonagem,
+                              0,
+                              30,
+                              110,
+                              135,
+                              220,
+                              270
+                              );
 
-  const inimigo       = new Inimigo(matrizInimigo, imagemInimigo, width - 52, 30, 52, 52, 104, 104, 8, 100);
+  const inimigo       = new Inimigo(matrizInimigo, imagemInimigo,
+                              width - 52,
+                              30,
+                              52,
+                              52,
+                              104,
+                              104,
+                              8,
+                              100);
   
-  const inimigoGrande = new Inimigo(matrizInimigoGrande,
-                              imagemInimigoGrande,
+  const inimigoGrande = new Inimigo(matrizInimigoGrande, imagemInimigoGrande,
                               width,
                               0,
                               200,
                               200,
                               400,
                               400,
-                              10,
-                              1500
+                              8,
+                              2500
                             );
 
   const inimigoVoador = new Inimigo(matrizInimigoVoador,
@@ -173,9 +186,8 @@ function setup() {
   inimigos.push(inimigoGrande);
   inimigos.push(inimigoVoador);
 
-  cenario    = new Cenario(imagemCenario, 2);
-  cenario1   = new Cenario(imagemCenario1, 3);
-  cenario2   = new Cenario(imagemCenario2, 4);
+  cenario        = new Cenario(imagemCenario, 5);
+  //cenarioFundo = new Cenario(imagemCenarioFundo, 3);
 
   frameRate(40);
   //somDoJogo.loop();
@@ -185,6 +197,7 @@ function keyPressed() {
   if(key === 'ArrowUp') {
     personagem.pula();
     somDoPulo.play();
+    
   }
 }
 
@@ -193,13 +206,9 @@ function draw() {
   cenario.exibe();
   cenario.move();
   
-  cenario1.exibe();
-  cenario2.exibe();
+  //cenarioFundo.exibe();
+  //cenarioFundo.exibe();
   
-  cenario1.move();
-  cenario2.move();
-
-  pontuacao.exibe();
   pontuacao.adicionarPonto();
 
   personagem.exibe();
@@ -210,8 +219,9 @@ function draw() {
     inimigo.move();
   
     if(personagem.estaColidindo(inimigo)) {
-      console.log("Colidiu");
-      //noLoop();
+      image(imagemGameOver, width/2 - 200, height/2 - 50);
+      //console.log("Colidiu");
+      noLoop();
     }
 
   });
