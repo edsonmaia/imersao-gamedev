@@ -14,6 +14,8 @@ let cenario2;
 let personagem;
 let inimigo;
 
+const inimigos = [];
+
 let somDoPulo;
 
 const matrizPersonagem = [
@@ -137,9 +139,9 @@ function setup() {
   
   personagem    = new Personagem(matrizPersonagem, imagemPersonagem, 0, 30, 110, 135, 220, 270);
 
-  inimigo       = new Inimigo(matrizInimigo, imagemInimigo, width - 52, 30, 52, 52, 104, 104, 8, 100);
+  const inimigo       = new Inimigo(matrizInimigo, imagemInimigo, width - 52, 30, 52, 52, 104, 104, 8, 100);
   
-  inimigoGrande = new Inimigo(matrizInimigoGrande,
+  const inimigoGrande = new Inimigo(matrizInimigoGrande,
                               imagemInimigoGrande,
                               width,
                               0,
@@ -151,7 +153,7 @@ function setup() {
                               1500
                             );
 
-  inimigoVoador = new Inimigo(matrizInimigoVoador,
+  const inimigoVoador = new Inimigo(matrizInimigoVoador,
                               imagemInimigoVoador,
                               width - 52,
                               200,
@@ -162,6 +164,10 @@ function setup() {
                               10,
                               2500
                             );
+
+  inimigos.push(inimigo);
+  inimigos.push(inimigoGrande);
+  inimigos.push(inimigoVoador);
 
   cenario    = new Cenario(imagemCenario, 2);
   cenario1   = new Cenario(imagemCenario1, 3);
@@ -176,7 +182,6 @@ function keyPressed() {
     personagem.pula();
     somDoPulo.play();
   }
-  
 }
 
 function draw() {
@@ -190,21 +195,18 @@ function draw() {
   cenario1.move();
   cenario2.move();
 
-  inimigo.exibe();
-  inimigo.move();
-
-  inimigoGrande.exibe();
-  inimigoGrande.move();
-
-  inimigoVoador.exibe();
-  inimigoVoador.move();
-
   personagem.exibe();
   personagem.aplicaGravidade();
 
-  if(personagem.estaColidindo(inimigo)) {
-    console.log("Colidiu");
-    //noLoop();
-  }
+  inimigos.forEach(inimigo => {
+    inimigo.exibe();
+    inimigo.move();
+  
+    if(personagem.estaColidindo(inimigo)) {
+      console.log("Colidiu");
+      //noLoop();
+    }
+
+  });
 
 }
