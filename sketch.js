@@ -2,6 +2,8 @@ let imagemCenario;
 let imagemCenario1;
 let imagemCenario2;
 
+let pontuacao;
+
 let imagemPersonagem;
 let imagemInimigo;
 let imagemInimigoGrande;
@@ -123,7 +125,7 @@ function preload() {
   imagemCenario       = loadImage('imagens/cenario/Sky.png');
   imagemCenario1      = loadImage('imagens/cenario/BG_Decor.png');
   imagemCenario2      = loadImage('imagens/cenario/Foreground.png');
-  
+
   imagemPersonagem    = loadImage('imagens/personagem/correndo.png');
   
   imagemInimigo       = loadImage('imagens/inimigos/gotinha.png');
@@ -136,8 +138,10 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+
+  pontuacao = new Pontuacao();
   
-  personagem    = new Personagem(matrizPersonagem, imagemPersonagem, 0, 30, 110, 135, 220, 270);
+  personagem          = new Personagem(matrizPersonagem, imagemPersonagem, 0, 30, 110, 135, 220, 270);
 
   const inimigo       = new Inimigo(matrizInimigo, imagemInimigo, width - 52, 30, 52, 52, 104, 104, 8, 100);
   
@@ -172,7 +176,7 @@ function setup() {
   cenario    = new Cenario(imagemCenario, 2);
   cenario1   = new Cenario(imagemCenario1, 3);
   cenario2   = new Cenario(imagemCenario2, 4);
-  
+
   frameRate(40);
   //somDoJogo.loop();
 }
@@ -185,7 +189,7 @@ function keyPressed() {
 }
 
 function draw() {
-  
+
   cenario.exibe();
   cenario.move();
   
@@ -194,6 +198,9 @@ function draw() {
   
   cenario1.move();
   cenario2.move();
+
+  pontuacao.exibe();
+  pontuacao.adicionarPonto();
 
   personagem.exibe();
   personagem.aplicaGravidade();
