@@ -1,1 +1,1 @@
-Aqui ficaram as imagens
+Aqui ficarão as imagens
