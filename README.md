@@ -1,6 +1,6 @@
 # imersao-gamedev
 
-![jogo-da-hipsta](https://github.com/edsonmaia/imersao-gamedev/blob/master/imagens/03-imersao-gamedev-aula03.png)
+![jogo-da-hipsta](https://github.com/edsonmaia/imersao-gamedev/blob/master/imagens/imersao-gamedev-aula03.png)
 
 Desenvolvimento de um **Jogo na Imersão GameDev** da **Alura Online**
 
