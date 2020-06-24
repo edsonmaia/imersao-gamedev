@@ -122,7 +122,7 @@ const matrizInimigoVoador = [
 function preload() {
 
   //imagemCenarioFundo  = loadImage('imagens/cenario/Foreground.png');
-  imagemCenario       = loadImage('imagens/cenario/floresta4.png');
+  imagemCenario       = loadImage('imagens/cenario/floresta1.png');
   imagemGameOver      = loadImage('imagens/assets/game-over.png');
 
   imagemPersonagem    = loadImage('imagens/personagem/correndo.png');
@@ -156,7 +156,7 @@ function setup() {
                               52,
                               104,
                               104,
-                              8,
+                              10,
                               100);
   
   const inimigoGrande = new Inimigo(matrizInimigoGrande, imagemInimigoGrande,
@@ -167,7 +167,7 @@ function setup() {
                               400,
                               400,
                               8,
-                              2500
+                              2000
                             );
 
   const inimigoVoador = new Inimigo(matrizInimigoVoador,
@@ -178,8 +178,8 @@ function setup() {
                               75,
                               200,
                               150,
-                              10,
-                              2500
+                              12,
+                              3000
                             );
 
   inimigos.push(inimigo);
@@ -194,11 +194,20 @@ function setup() {
 }
 
 function keyPressed() {
+
   if(key === 'ArrowUp') {
     personagem.pula();
     somDoPulo.play();
-    
   }
+
+  if(keyCode === RIGHT_ARROW) {
+    personagem.avanca();
+  }
+
+  if(keyCode === LEFT_ARROW) {
+    personagem.recua();
+  }
+
 }
 
 function draw() {
@@ -217,13 +226,15 @@ function draw() {
   inimigos.forEach(inimigo => {
     inimigo.exibe();
     inimigo.move();
-  
-    if(personagem.estaColidindo(inimigo)) {
-      image(imagemGameOver, width/2 - 200, height/2 - 50);
-      //console.log("Colidiu");
-      noLoop();
-    }
+
+      if(personagem.estaColidindo(inimigo)) {
+
+        image(imagemGameOver, width/2 - 200, height/2 - 50);
+        //console.log("Colidiu");
+        noLoop();
+      }
 
   });
+
 
 }
