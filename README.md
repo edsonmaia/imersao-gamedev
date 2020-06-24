@@ -1,4 +1,4 @@
-# imersao-gamedev
+# Imersão GameDev
 
 ![jogo-da-hipsta](https://github.com/edsonmaia/imersao-gamedev/blob/master/imagens/imersao-gamedev-aula03.png)
 
