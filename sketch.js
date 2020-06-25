@@ -11,7 +11,9 @@ function setup() {
     telaInicial
   };
 
-  botaoGerenciador = new BotaoGerenciador('Iniciar', width/2, height/2);
+  botaoGerenciador    = new BotaoGerenciador('Iniciar', width/2, height/2);
+  // BOTAO JOGAR NOVAMENTE
+  botaoJogarNovamente = new BotaoJogarNovamente('Jogar Novamente', width/2, height/2);
 }
 
 function keyPressed() {
@@ -19,7 +21,5 @@ function keyPressed() {
 }
 
 function draw() {
-  
   cenas[cenaAtual].draw();
-
 }
