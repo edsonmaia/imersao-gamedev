@@ -218,6 +218,7 @@ function draw() {
   //cenarioFundo.exibe();
   //cenarioFundo.exibe();
   
+  pontuacao.exibe();
   pontuacao.adicionarPonto();
 
   personagem.exibe();
