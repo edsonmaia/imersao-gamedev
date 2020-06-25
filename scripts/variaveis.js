@@ -1,8 +1,9 @@
 let jogo;
-
-let imagemCenario;
-let imagemCenarioFundo;
-let imagemGameOver;
+let cenaAtual = 'telaInicial';
+let cenas;
+let telaInicial;
+let fonteTelaInicial;
+let botaoGerenciador;
 
 let pontuacao;
 
