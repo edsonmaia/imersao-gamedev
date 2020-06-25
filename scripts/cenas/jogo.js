@@ -101,8 +101,9 @@ class Jogo {
 		}
 
 		if(personagem.estaColidindo(inimigo)) {
-
+			somDoJogo.stop();
 			image(imagemGameOver, width/2 - 200, height/2 - 50);
+			somGameOver.play();
     		noLoop();
 
 		}
