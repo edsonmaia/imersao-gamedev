@@ -102,10 +102,13 @@ class Jogo {
 
 		if(personagem.estaColidindo(inimigo)) {
 			somDoJogo.stop();
-			image(imagemGameOver, width/2 - 200, height/2 - 50);
+			image(imagemGameOver, width/2 - 200, height/2 - 100);
 			somGameOver.play();
     		noLoop();
 
+    		// ADICIONAR BOTAO JOGAR NOVAMENTE
+    		botaoJogarNovamente.draw();
+    		botaoJogarNovamente.y = height / 2;
 		}
 
 	}
