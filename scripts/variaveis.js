@@ -22,6 +22,7 @@ let inimigo;
 const inimigos = [];
 
 let somDoPulo;
+let somGameOver;
 
 const matrizPersonagem = [
       [0, 0],
