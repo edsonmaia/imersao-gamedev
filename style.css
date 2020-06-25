@@ -1,7 +1,80 @@
 html, body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 canvas {
   display: block;
+}
+
+.container {
+	font-family: Open-sans, Verdana, Arial;
+	font-size: 18px;
+	margin: 0 auto;
+	height: 730px;
+	background-image: url('imagens/cenario/floresta-tela-inicial.png');
+	background-size: cover;
+	overflow: hidden;
+}
+
+.tela {
+	width: 1980px;
+	height: 730px;
+	top: 50%;
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.titulo_jogo {
+	font-family: 'Piedra', Open-sans, Verdana, Arial;
+	font-size: 100px;
+	letter-spacing: 5px;
+	margin-top: 0;
+	color: #fff;
+	text-shadow: 2px 2px 1px #E91E63;
+	margin-bottom: 0;
+}
+
+#creditos {
+	text-decoration: none;
+	color: #fff;
+}
+
+#copyleft {
+	display:inline-block;
+  	transform: rotate(180deg);
+}
+
+.centralizar {
+	text-align: center;
+}
+
+.logo {
+	width: 200px;
+	margin-bottom: 20px;
+	border-radius: 200px;
+	border: 2px solid #E91E63;
+	box-shadow: 0px 0px 10px #E91E63;
+}
+
+.botao_play {
+	
+	width:  200px;
+	height: 200px;
+	padding: 20px;
+	
+	border-radius: 100px;
+	background: #E91E63;
+	box-shadow: 0px 0px 10px #ff80ab;
+
+	font-size: 24px;
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+
+}
+
+.botao_play:hover {
+	box-shadow: 0px 0px 20px #fff;
 }
