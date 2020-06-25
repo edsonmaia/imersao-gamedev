@@ -53,10 +53,10 @@ class Personagem extends Animacao {
 		let gotinha = circle(inimigo.x+35, inimigo.y+25, 40);
 
 		// inimigo voador		x, 				y, 	  	 d
-		//let voador = circle(inimigo.x+60, inimigo.y+35, 45);
+		let voador = circle(inimigo.x+60, inimigo.y+35, 45);
 		
 		// inimigo grande		x, 				y, 	  	 d
-		//let grande = circle(inimigo.x+130, inimigo.y+115, 85);
+		let grande = circle(inimigo.x+130, inimigo.y+115, 85);
 
 		//elipse 1  (x, y, d, x2, y2, d2)
 		const colisaoGotinha  = collideCircleCircle(this.x+50,this.y+75,100, inimigo.x+35, inimigo.y+25, 40);
