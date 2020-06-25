@@ -4,6 +4,7 @@ let cenas;
 let telaInicial;
 let fonteTelaInicial;
 let botaoGerenciador;
+let botaoJogarNovamente; // BOTAO JOGAR NOVAMENTE
 
 let pontuacao;
 
