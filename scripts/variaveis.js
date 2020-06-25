@@ -1,3 +1,5 @@
+let jogo;
+
 let imagemCenario;
 let imagemCenarioFundo;
 let imagemGameOver;
