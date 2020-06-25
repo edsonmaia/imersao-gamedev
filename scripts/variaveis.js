@@ -11,8 +11,6 @@ let imagemInimigo;
 let imagemInimigoGrande;
 let imagemInimigoVoador;
 
-let inimigoAtual = 0;
-
 let cenario;
 let cenario1;
 let cenario2;
