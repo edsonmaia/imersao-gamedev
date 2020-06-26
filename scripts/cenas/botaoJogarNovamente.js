@@ -14,8 +14,8 @@ class BotaoJogarNovamente extends BotaoGerenciador {
 
 	_alterarCena() {
 		this.botao.remove();
-		cenaAtual = 'telaInicial';
-		//location.href = "../imersao-gamedev/index.html";
+		//cenaAtual = 'telaInicial';
+		window.location.href = "../imersao-gamedev/index.html";
 	}
 
 }
