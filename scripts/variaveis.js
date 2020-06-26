@@ -6,6 +6,12 @@ let fonteTelaInicial;
 let botaoGerenciador;
 let botaoJogarNovamente; // BOTAO JOGAR NOVAMENTE
 
+let imagemTelaInicial;
+let imagemCenario;
+let imagemCenarioFundo;
+let imagemGameOver;
+let imagemVida; // IMAGEM CORACAO
+
 let pontuacao;
 
 let imagemPersonagem;
@@ -19,6 +25,9 @@ let cenario2;
 let somDoJogo;
 let personagem;
 let inimigo;
+let moedas;    // MOEDAS
+let vida;      // VIDA
+let fita;      // CONFIG DO JOGO
 
 const inimigos = [];
 
@@ -42,6 +51,18 @@ const matrizPersonagem = [
       [440, 810],
       [660, 810]
     ];
+
+// MATRIZ MOEDAS
+const matrizMoedas = [
+  [0, 0],
+  [104, 0],
+  [208, 0],
+  [312, 0],
+  [0, 104],
+  [104, 104],
+  [208, 104],
+  [312, 104],
+];
 
 const matrizInimigo = [
   [0, 0],

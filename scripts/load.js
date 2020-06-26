@@ -1,7 +1,11 @@
 function preload() {
+	fita      			= loadJSON('fita/fita.json');
+
 	imagemTelaInicial 	= loadImage('imagens/cenario/telaInicial.png');
 	imagemCenario       = loadImage('imagens/cenario/floresta1.png');
 	imagemGameOver      = loadImage('imagens/assets/game-over.png');
+	imagemMoedas 		= loadImage('imagens/assets/moedas.png');
+	imagemVida			= loadImage('imagens/assets/coracao.png');
 
 	imagemPersonagem    = loadImage('imagens/personagem/correndo.png');
 
@@ -14,4 +18,5 @@ function preload() {
 	somDoJogo           = loadSound('sons/trilha_jogo.mp3');
 	somDoPulo           = loadSound('sons/somPulo.mp3');
 	somGameOver         = loadSound('sons/cutie-game-over.mp3');
+	
 }
