@@ -11,6 +11,7 @@ class Personagem extends Animacao {
 		this.alturaDoPulo 	  = -50;
 		this.pulos			  = 0;
 		this.quantMaximaPulos = 2;
+		this.invencivel 	  = false;
 	}
 
 	// avançar 50px para a direita
@@ -39,8 +40,19 @@ class Personagem extends Animacao {
 			this.pulos = 0;
 		}
 	}
+
+	tornarInvencivel() {
+		this.invencivel = true;
+		setTimeout( () => {
+			this.invencivel = false;
+		}, 1000);
+	}
+
 	// x pers, y pers, larg, alt
 	estaColidindo(inimigo) {
+		if(this.invencivel) {
+			return false;
+		}
 		//const precisao = 0.7;
 		noFill();
 		stroke('yellow');
@@ -74,6 +86,16 @@ class Personagem extends Animacao {
 			return false;
 		}
 		//return colisao;
+	}
+
+	// x pers, y pers, larg, alt
+	pegouMoeda(moedas) {
+		let posicaoXMoeda = moedas.x+35;
+		let alturaMoeda   = height-280;
+		//let verMoeda = circle(moedas.x+35, alturaMoeda, 50);
+		const moedinha  = collideCircleCircle(this.x+50,this.y+75,100, posicaoXMoeda, alturaMoeda, 50);
+		// console.log(moedinha);
+		return moedinha;
 	}
 
 }
