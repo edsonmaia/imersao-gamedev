@@ -4,6 +4,7 @@ function setup() {
   somDoJogo.loop();
   jogo        = new Jogo();
   telaInicial = new TelaInicial();  
+  moedas      = new Moedas(); // MOEDAS
   jogo.setup();
 
   cenas = {
