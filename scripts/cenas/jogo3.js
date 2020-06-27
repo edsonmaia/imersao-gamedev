@@ -1,12 +1,12 @@
-class Jogo {
+class Jogo3 {
   constructor() {
     this.indice = 0;
     this.mapa = fita.mapa;
-    this.metaMoedas = 10;
+    this.metaMoedas = 4;
   }
 
   setup() {
-    cenario   = new Cenario(imagemCenario, 3);
+    cenario   = new Cenario(imagemCenario3, 3.5);
     pontuacao = new Pontuacao();
     moedinhas = new Moedinhas();
     vida      = new Vida(fita.configuracoes.vidaMaxima, fita.configuracoes.vidaInicial);
@@ -65,11 +65,11 @@ class Jogo {
       this.indice++;
       inimigo.aparece();
       if (this.indice > this.mapa.length - 1) {
-        this.indice = 0;
+        this.indice = 20;
       }
     }
 
-    // FIM DA FASE 1
+    // FIM DA FASE 3
     // console.log("Moedinhas " + moedinhas.moedinhas);
       if (moedinhas.moedinhas >= this.metaMoedas) {
         somDoJogo.stop();
@@ -78,8 +78,8 @@ class Jogo {
 
         image(imagemLevelWin, width / 2 - 200, height / 2 - 100);
         // ADICIONAR BOTAO
-        cenaAtual = 'jogo';
-        botaoFase2.draw();
+        cenaAtual = 'jogo3';
+        botaoFase4.draw();
         noLoop();
       }
 
@@ -99,7 +99,9 @@ class Jogo {
 
         // ADICIONAR BOTAO JOGAR NOVAMENTE
         botaoJogarNovamente.draw();
+        botaoJogarNovamente.y = height / 2;
         noLoop();
+
       }
 
     }
@@ -112,15 +114,16 @@ class Jogo {
       moedas.esconde();           // esconder moeda
       moedinhas.adicionarMoeda(); // console.log("Pegou +1 moedinha");
     }
-
-    // DICA 1
+    
+    // DICA 3
     fill('#fff');
     noStroke();
     textAlign(CENTER);
     textSize(25);
-    text('Pegue 10 moedinhas para passar de fase', width / 2, 35 );
+    text('Pegue 30 moedinhas para passar de fase', width / 2, 35 );
     //
 
   } // fim draw
+  
   
 }

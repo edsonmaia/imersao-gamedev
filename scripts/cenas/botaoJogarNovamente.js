@@ -4,7 +4,7 @@ class BotaoJogarNovamente extends BotaoGerenciador {
 		super(texto, x, y);
 		this.botao  = createButton(this.texto);
 		this.botao.mousePressed( () => this._alterarCena() );
-		this.botao.addClass('botao-tela-inicial');
+		this.botao.addClass('botao-jogar-novamente');
 	}
 
 	draw() {
@@ -14,8 +14,8 @@ class BotaoJogarNovamente extends BotaoGerenciador {
 
 	_alterarCena() {
 		this.botao.remove();
+        window.location.reload(true);
 		//cenaAtual = 'telaInicial';
-		window.location.href = "../imersao-gamedev/index.html";
 	}
 
 }
