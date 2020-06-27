@@ -65,7 +65,7 @@ class Jogo3 {
       this.indice++;
       inimigo.aparece();
       if (this.indice > this.mapa.length - 1) {
-        this.indice = 20;
+        this.indice = 0;
       }
     }
 
