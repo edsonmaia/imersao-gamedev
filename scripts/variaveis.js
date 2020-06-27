@@ -1,68 +1,53 @@
-let jogo;
-let cenaAtual = 'telaInicial';
-let cenas;
-let telaInicial;
-let fonteTelaInicial;
-let botaoGerenciador;
-let botaoJogarNovamente; // BOTAO JOGAR NOVAMENTE
-
-let imagemTelaInicial;
 let imagemCenario;
-let imagemCenarioFundo;
-let imagemGameOver;
-let imagemVida; // IMAGEM CORACAO
-
-let pontuacao;
-
+let imagemCenario2;
+let imagemCenario3;
+let imagemCenario4;
 let imagemPersonagem;
 let imagemInimigo;
 let imagemInimigoGrande;
 let imagemInimigoVoador;
+let imagemGameOver;
+let imagemTelaInicial;
+let imagemVida;
+let fonteTelaInicial;
+let somDoPulo;
+let jogo;
+let fita;
+
+let cenaAtual = 'telaInicial';
+let cenas;
+let telaInicial;
+let botaoGerenciador;
+let botaoJogarNovamente; // BOTAO JOGAR NOVAMENTE
+let moedas;       // MOEDAS
+let imagemMoedas; // MOEDAS
+let vida;
+let somPegaMoeda; // SOM PEGA MOEDA
+let somHit;       // SOM DO DANO
+let moedinhas;    // MOEDINHAS
+let imagemMoeda;  // MOEDA DO PLACAR
+let imagemChapeu; // IMAGEM CHAPEU HIPSTA
+let somLevelWin;  // SOM PASSOU DE FASE
+let imagemLevelWin; // IMAGEM LEVEL UP
+let botaoFase2; // BOTAO PROXIMA FASE 2
+let botaoFase3; // BOTAO PROXIMA FASE 3
+let botaoFase4; // BOTAO PROXIMA FASE 4
+let botaoCreditos;    // BOTAO CREDITOS
+let telaCreditos;      // TELA DE CREDITOS
+let jogo2; // FASE 2
+let jogo3; // FASE 3
+let jogo4; // FASE 4
 
 let cenario;
-let cenario1;
-let cenario2;
+let cenario2; // CENARIO 2
+let cenario3; // CENARIO 3
+let cenario4; // CENARIO 4
 let somDoJogo;
 let personagem;
 let inimigo;
-let moedas;    // MOEDAS
-let vida;      // VIDA
-let fita;      // CONFIG DO JOGO
-
-const inimigos = [];
-
-let somDoPulo;
-let somGameOver;
-
-const matrizPersonagem = [
-      [0, 0],
-      [220, 0],
-      [440, 0],
-      [0, 270],
-      [220, 270],
-      [440, 270],
-      [660, 270],
-      [0, 540],
-      [220, 540],
-      [440, 540],
-      [660, 540],
-      [0, 810],
-      [220, 810],
-      [440, 810],
-      [660, 810]
-    ];
-
-// MATRIZ MOEDAS
-const matrizMoedas = [
-  [0, 0],
-  [104, 0],
-  [208, 0],
-  [312, 0],
-  [0, 104],
-  [104, 104],
-  [208, 104],
-  [312, 104],
-];
+let inimigoGrande;
+let inimigoVoador;
+let pontuacao;
 
 const matrizInimigo = [
   [0, 0],
@@ -93,8 +78,25 @@ const matrizInimigo = [
   [104, 626],
   [208, 626],
   [312, 626],
-];
-
+]
+const matrizPersonagem = [
+  [0, 0],
+  [220, 0],
+  [440, 0],
+  [660, 0],
+  [0, 270],
+  [220, 270],
+  [440, 270],
+  [660, 270],
+  [0, 540],
+  [220, 540],
+  [440, 540],
+  [660, 540],
+  [0, 810],
+  [220, 810],
+  [440, 810],
+  [660, 810],
+]
 const matrizInimigoGrande = [
   [0,0],
   [400,0],
@@ -124,8 +126,7 @@ const matrizInimigoGrande = [
   [0, 2000],
   [400, 2000],
   [800, 2000],
-];
-
+]
 const matrizInimigoVoador = [
   [0,0],
   [200, 0],
@@ -143,4 +144,18 @@ const matrizInimigoVoador = [
   [200, 600],
   [400, 600],
   [0, 750],
+]
+
+const inimigos = [];
+
+// MATRIZ MOEDAS
+const matrizMoedas = [
+  [0, 0],
+  [104, 0],
+  [208, 0],
+  [312, 0],
+  [0, 104],
+  [104, 104],
+  [208, 104],
+  [312, 104],
 ];
