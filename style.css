@@ -9,7 +9,7 @@ canvas {
   display: block;
 }
 
-.botao-tela-inicial {
+.botao-tela-inicial, .botao-jogar-novamente {
   font-family: 'Luckiest Guy', cursive;
   padding: 1rem 1.25rem;
   font-size: 1.5rem;
@@ -22,12 +22,23 @@ canvas {
   color: #fff;
 }
 
-.botao-tela-inicial:hover {
+.botao-tela-inicial:hover,  .botao-jogar-novamente:hover {
   background-color: #ffc0c1;
   box-shadow: 2px 2px 0px 1px #b58a8a;
 }
 
 /* CSS personalizado */
+
+.botao-jogar-novamente {
+	background-color: #ef5350;
+	box-shadow: 2px 2px 0px 1px #c62828;
+}
+
+.botao-jogar-novamente:hover {
+	background-color: #b71c1c;
+	box-shadow: 2px 2px 0px 1px #e57373;
+}
+
 .container {
 	font-family: Open-sans, Verdana, Arial;
 	font-size: 18px;

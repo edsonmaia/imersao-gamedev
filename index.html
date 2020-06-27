@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
+<head>
     <link rel="icon" type="image/png" href="imagens/favicon.png">
-
     <script src="p5.js"></script>
     <script src="p5.sound.min.js"></script>
-    <script src="p5.collide2d.js"></script>
-
-    <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
+    <script src="p5.collide2d.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="style.css">
-
-    <meta charset="utf-8" />
-
+    <meta charset="utf-8">
     <title>Jogo Bruxinha Hipsta</title>
-
   </head>
   <body>
+    <script src="scripts/variaveis.js"></script>
+    <script src="scripts/cenas/telaInicial.js"></script>
+    <script src="scripts/cenas/telaCreditos.js"></script>
+    <script src="scripts/cenas/botaoGerenciador.js"></script>
+    <script src="scripts/cenas/botaoJogarNovamente.js"></script>
+    <script src="scripts/cenas/botaoCreditos.js"></script>
     
-    <div class="container centralizar" >
+    <script src="scripts/cenas/botaoFase2.js"></script>
+    <script src="scripts/cenas/botaoFase3.js"></script>
+    <script src="scripts/cenas/botaoFase4.js"></script>
 
-        <div class="tela">
-            <h1 class="titulo_jogo">Bruxinha Hipsta</h1>
-            
-            <figure>
-                <img class="logo" src="imagens/bruxinha-hipsta-logo.png">
-            </figure>
-            
-            <p> <a class="botao_play" href="jogo.html">Jogar</a> </p>
-                <br>
-            <p> <a id="creditos" target="_blank" href="https://github.com/edsonmaia/imersao-gamedev">Desenvolvido por Edson Maia <span id="copyleft">&copy;</span> 2020 </a> </p>
-
-        </div>
-
-    </div>
-
+    <script src="scripts/load.js"></script>
+    <script src="scripts/cenas/jogo.js"></script>
+    <script src="scripts/cenas/jogo2.js"></script>
+    <script src="scripts/cenas/jogo3.js"></script>
+    <script src="scripts/cenas/jogo4.js"></script>
+    <script src="scripts/jogo/vida.js"></script>
+    <script src="scripts/jogo/pontuacao.js"></script>
+    <script src="scripts/jogo/animacao.js"></script>
+    <script src="scripts/jogo/inimigo.js"></script>
+    <script src="scripts/jogo/personagem.js"></script>
+    <script src="scripts/jogo/cenario.js"></script>
+    <script src="scripts/jogo/moedas.js"></script>
+    <script src="scripts/jogo/moedinhas.js"></script>
+    <script src="sketch.js"></script>
   </body>
 </html>
