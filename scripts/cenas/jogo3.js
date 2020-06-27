@@ -2,7 +2,7 @@ class Jogo3 {
   constructor() {
     this.indice = 0;
     this.mapa = fita.mapa;
-    this.metaMoedas = 4;
+    this.metaMoedas = 30;
   }
 
   setup() {
