@@ -15,7 +15,7 @@ class TelaInicial {
   }
   
   _logoHipsta(){
-    image(imagemChapeu, width/3, 100, 100, 50);
+    image(imagemChapeu, width/3, 80, 100, 50);
   }
 
   _texto(){
